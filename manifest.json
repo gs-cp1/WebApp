@@ -1,7 +1,7 @@
 {
    "name": "WebApp 1",
    "short_name": "WP1",
-   "start_url": "/",
+   "start_url": "/WebApp/",
    "display": "standalone",
    "background_color": "#6ae4d1",
    "theme_color": "#45504e",
