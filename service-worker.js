@@ -1,5 +1,6 @@
 
-const CACHE_NAME = 'app-cache-v2'; // Update cache version
+// service-worker.js
+const CACHE_NAME = 'app-cache-v2';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting(); // Activate the new service worker immediately
