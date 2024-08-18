@@ -31,7 +31,7 @@ if ('serviceWorker' in navigator) {
         // Check for updates periodically (e.g., every 5 minutes)
         setInterval(() => {
           registration.update();
-        }, 1000 * 60 * .01); // Check every .5 minutes
+        }, 1000 * 5); // Check every .5 minutes
       })
       .catch(error => {
         console.error('ServiceWorker registration failed:', error);
