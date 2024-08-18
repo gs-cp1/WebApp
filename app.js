@@ -1,5 +1,4 @@
 // app.js
-// app.js
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
@@ -9,7 +8,7 @@ if ('serviceWorker' in navigator) {
         // Check for updates periodically
         setInterval(() => {
           registration.update();
-        }, 105); // Check every 5 minutes
+        }, 1000 * 60 * 5); // Check every 5 minutes
 
         // Listen for updates
         registration.onupdatefound = () => {
@@ -38,3 +37,4 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+

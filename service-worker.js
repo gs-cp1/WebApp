@@ -1,4 +1,3 @@
-
 // service-worker.js
 const CACHE_NAME = 'app-cache-v2';
 
