@@ -20,12 +20,10 @@
  });
  */
 
- const CACHE_NAME = 'app-cache-v2'; // Update the cache name to force a new cache
+ const CACHE_NAME = 'app-cache-v2'; // Use your existing cache name
 
 self.addEventListener('install', (event) => {
-  // Skip the waiting phase and activate the new service worker immediately
-  self.skipWaiting();
-  
+  self.skipWaiting(); // Skip waiting to activate the new service worker immediately
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll([
@@ -39,7 +37,6 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  // Delete old caches that don't match the current version
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
@@ -51,15 +48,10 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
-
-  // Claim any clients immediately, so the updated service worker takes control
-  return self.clients.claim();
+  return self.clients.claim(); // Activate the service worker immediately
 });
 
+// Bypass cache and always fetch from the network
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+  event.respondWith(fetch(event.request));
 });
