@@ -14,7 +14,10 @@ if ('serviceWorker' in navigator) {
               if (navigator.serviceWorker.controller) {
                 // New update available, notify user
                 console.log('New update available. Refreshing...');
-                
+
+                // Optionally, notify the user about the update
+                displayUpdateNotification();
+
                 // Send message to service worker to activate it immediately
                 registration.active.postMessage({ action: 'skipWaiting' });
 
@@ -25,14 +28,13 @@ if ('serviceWorker' in navigator) {
           };
         };
 
-        // Check for updates periodically
+        // Check for updates periodically (e.g., every 5 minutes)
         setInterval(() => {
           registration.update();
-        }, 1000 * 60 * .01); // Check every 5 minutes
+        }, 1000 * 60 * .5); // Check every .5 minutes
       })
       .catch(error => {
         console.error('ServiceWorker registration failed:', error);
       });
   });
 }
-

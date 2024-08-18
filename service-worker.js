@@ -1,12 +1,10 @@
 
-
 const CACHE_NAME = 'app-cache-v2'; // Update cache version
 
-// service-worker.js
 self.addEventListener('install', (event) => {
   self.skipWaiting(); // Activate the new service worker immediately
   event.waitUntil(
-    caches.open('app-cache-v2').then((cache) => {
+    caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll([
         '/',
         '/index.html',
@@ -22,7 +20,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== 'app-cache-v2') {
+          if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName); // Clean up old caches
           }
         })
@@ -34,7 +32,8 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request))
+    fetch(event.request)
+      .catch(() => caches.match(event.request)) // Serve from cache if network fails
   );
 });
 
