@@ -3,24 +3,9 @@ body {
    text-align: center;
    margin: 0;
    padding: 0;
-   background-color: #f0f0f0;
-   
+   background-color: rgb(148,177,255);
 }
+
 h1 {
    color: #333;
 }
-/* style.css */
-#refreshButton {
-   
-   padding: 10px 20px;
-   background-color: #007bff;
-   color: blue;
-   border: 5px;
-   border-radius: 5px;
-   cursor: pointer;
- }
- 
- #refreshButton:hover {
-   background-color: #0056b3;
- }
- 
