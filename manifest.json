@@ -4,7 +4,7 @@
    "start_url": "/WebApp/",
    "display": "standalone",
    "background_color": "#f0f0f0",
-   "theme_color": "rgb(148,177,255)",
+   "theme_color": "#94B1FF",
    "icons": [
      {
        "src": "gs_favicon.png",
