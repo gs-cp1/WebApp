@@ -3,18 +3,14 @@ body {
    text-align: center;
    margin: 0;
    padding: 0;
-   background-color: rgb(148,177,255);
-   
-   -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling is off */
-   
+   background-color: rgb(148,177,255);  
 }
-
+/*
 html, body {
-   touch-action: none; /* Prevent touch gestures like scrolling */
-   overflow: hidden;  /* Disable scrolling */
-   user-select: none;  
-   -moz-user-select: none;    /* Firefox */
-}
+   touch-action: none;  Prevent touch gestures like scrolling 
+    overflow: hidden;  Disable scrolling 
+   user-select: none;
+}*/
 
 h1 {
    color: #333;
