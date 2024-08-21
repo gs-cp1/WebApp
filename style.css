@@ -9,3 +9,15 @@ body {
 h1 {
    color: #333;
 }
+
+.card {
+   width: 65px;
+   height: 100px;
+   background-color: #3498db;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: grab;
+   position: absolute; /* Allow it to be positioned anywhere */
+}

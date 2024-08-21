@@ -38,3 +38,37 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
+// Card dragging
+const card = document.getElementById("card");
+
+card.onpointerdown = function(event) {
+    // Capture the pointer
+    card.setPointerCapture(event.pointerId);
+
+    let shiftX = event.clientX - card.getBoundingClientRect().left;
+    let shiftY = event.clientY - card.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+        card.style.left = pageX - shiftX + 'px';
+        card.style.top = pageY - shiftY + 'px';
+    }
+
+    moveAt(event.pageX, event.pageY);
+
+    function onPointerMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener('pointermove', onPointerMove);
+
+    card.onpointerup = function() {
+        document.removeEventListener('pointermove', onPointerMove);
+        card.releasePointerCapture(event.pointerId); // Release the pointer
+        card.onpointerup = null;
+    };
+};
+
+card.ondragstart = function() {
+    return false;
+};
