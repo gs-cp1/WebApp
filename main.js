@@ -6,3 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
    
 });
 
+// Disable text selection
+document.body.style.userSelect = 'none';
+
+// Enable text selection (if needed)
+// document.body.style.userSelect = 'auto';
