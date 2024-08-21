@@ -6,7 +6,7 @@ body {
    background-color: rgb(148,177,255);
    
    -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling is off */
-  
+   -moz-user-select: none;    /* Firefox */
 }
 
 html, body {
