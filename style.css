@@ -10,6 +10,7 @@ html, body {
    touch-action: none; /* Prevent touch gestures like scrolling */
    overflow: hidden;   /* Disable scrolling */
    user-select: none;
+   -moz-user-select: none;
 }
 
 h1 {
