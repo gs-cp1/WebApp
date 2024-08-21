@@ -11,3 +11,9 @@ document.body.style.userSelect = 'none';
 
 // Enable text selection (if needed)
 // document.body.style.userSelect = 'auto';
+
+// Disable scrolling
+document.body.style.overflow = 'hidden';
+
+// Enable scrolling (if needed)
+//document.body.style.overflow = 'auto';
